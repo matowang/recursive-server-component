@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="w-full p-10">
       <div className="relative max-w-3xl mx-auto w-full">
-        <Box placement="bottom" depth={0} />
+        <Box placement="bottom" depth={0} delay={0} />
       </div>
       {/* Github Repo */}
       <a
@@ -58,11 +58,12 @@ const RATIO = 1 / 1.61803398875;
 async function Box(props: {
   placement: "top" | "bottom" | "left" | "right";
   depth: number;
+  delay?: number;
 }) {
   if (props.depth > 10) {
     return null;
   }
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, props.delay ?? 500));
   return (
     <div
       style={{
