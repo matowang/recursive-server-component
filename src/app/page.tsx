@@ -40,7 +40,7 @@ async function Box(props: {
   if (props.depth > 10) {
     return null;
   }
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   return (
     <div
       style={{
